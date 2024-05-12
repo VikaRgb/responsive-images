@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      /* img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      } */
+
+      .box {
+        width: 700px;
+        height: 500px;
+        background-image: url('./base.png');
+        background-repeat: no-repeat;
+        outline: 2px solid black;
+      }
+      /* 
+      @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        .box {
+          background-image: url('./2x.png');
+        }
+      }
+
+      @media (min-device-pixel-ratio: 3),
+        (min-resolution: 276dpi),
+        (min-resolution: 3dppx) {
+        .box {
+					background-image: url("./3x.png");
+        }
+      } */
+
+      @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        .box {
+          background-image: url('./second.png');
+        }
+      }
+
+      @media (min-device-pixel-ratio: 3),
+        (min-resolution: 288dpi),
+        (min-resolution: 3dppx) {
+        .box {
+          background-image: url('./3x.png');
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div>
+
+		<img src="./base.png" alt="">
+		 
+		
+	</div>  -->
+
+    <!-- <div class="box"></div> -->
+
+    <!-- 
+		<img
+		 srcset="./second.png 2x, ./3x.png 3x"
+		 src="base.png" alt="">
+ -->
+
+    <!-- <img 
+		  srcset="./base.png 370w,
+			 ./second.png 740w,
+			 ./3x.png 1110w
+			"
+      sizes="(min-width:1000px) 400px,(min-width:767px) 300px, 100vw"
+    
+		  src="./base.png" alt="">  -->
+    <picture>
+      <source
+        media="(min-width:1200px)"
+        srcset="./img/1x-desk.webp 1x, ./img/2x-desk.webp 2x"
+        type="image/webp"
+      />
+      <source
+        media="(min-width:1200px)"
+        srcset="./img/1x-desk.jpg 1x, ./img/2x-desk.jpg 2x"
+        type="image/jpeg"
+      />
+      <source
+        media="(min-width:768px)"
+        srcset="./img/1x-tb.webp 1x, ./img/2x-tb.webp 2x"
+        type="image/webp"
+      />
+
+      <source
+        media="(min-width:768px)"
+        srcset="./img/1x-tb.jpg 1x, ./img/2x-tb.jpg 2x"
+        type="image/jpeg"
+      />
+
+      <source
+        media="(max-width:768px)"
+        srcset="./img/1x-mob.webp 1x, ./img/2x-mob.webp 2x"
+        type="image/webp"
+      />
+      <source
+        media="(max-width:768px)"
+        srcset="./img/1x-mob.jpg 1x, ./img/2x-mob.jpg 2x"
+        type="image/jpeg"
+      />
+      <img src="./base.png" alt="" />
+    </picture>
+  </body>
+</html>
+
